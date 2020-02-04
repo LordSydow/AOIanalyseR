@@ -18,7 +18,7 @@ Suggests:
     testthat (>= 2.1.0)
 Description: 
     Create "AOI Sequence Charts" and statistics related to your 
-    eye tracking data. Compare these charts get information 
+    eye tracking data. Compare these charts to get information 
     about how the subjects viewed your graphics and texts. 
     The Sample.tsv shows you (as an example) the required form 
     of eye tracking data.
