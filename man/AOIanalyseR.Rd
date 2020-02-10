@@ -14,6 +14,13 @@ the subjects viewed your graphics, texts, advertisments...
 AOI = area of interest. "AOI Sequence Charts" create readable and compareable
 timelines out of the fixations of your test subjects.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/LordSydow/AOIanalyseR}
+}
+
+}
 \author{
 \strong{Maintainer}: Steve Sydow \email{steve.sydow@fh-stralsund.de}
 

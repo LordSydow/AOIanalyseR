@@ -1,0 +1,19 @@
+citHeader("To cite AOIanalyseR in publications use:")
+
+citEntry(
+  entry = "misc",
+  title = "AOIanalyseR - Analysing data with AOI Sequence Charts",
+  author = personList(
+    as.person("Steve Sydow"),
+    as.person("Paul Wolf")
+  ),
+  year = "2020",
+  url = "https://github.com/LordSydow/AOIanalyseR",
+  note = "DOI = 10.5281/zenodo.3635895",
+
+  textVersion =
+  paste("Steve Sydow, Paul Wolf (2020).",
+        "AOIanalyseR - Analysing data with AOI Sequence Charts.",
+        "URL https://github.com/LordSydow/AOIanalyseR/.",
+        "DOI 10.5281/zenodo.3635895")
+)
