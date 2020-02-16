@@ -17,9 +17,12 @@ For now please use `devtools::install_github("LordSydow/AOIanalyseR")` to instal
 
 ## Usage 
 
-Getting started (importing Sample.tsv and creating charts):
+* Load the package
+```
+library(AOIanalyseR)
+```
 
-* Import your eye tracking data: 
+* Import Sample.tsv: 
 ```
 data <- AOIanalyseR::importData(
   files = system.file("extdata", "Sample.tsv", package = "AOIanalyseR", mustWork = TRUE),
@@ -28,9 +31,45 @@ data <- AOIanalyseR::importData(
   aoi_columns = c("title", "pic", "text")
 )
 ```
-* Create "AOI Sequence Charts"  
-`AOIanalyseR::createAOISequenceChart(data)`
+* Import your eye tracking data:
+```
+data <- AOIanalyseR::importData(
+  files = c("YOUR_FILE_1, YOUR_FILE_2"),
+  delimiter = ";", # use "," or ";" for csv and "\t" for tsv   
+  name_column = "YOUR_NAME_COL",
+  time_column = "YOUR_TIME_COL",
+  aoi_columns = c("YOUR_FIRST_AOI", "YOUR_SECOND_AOI", "YOUR_THIRD_AOI")
+)
+```
+* Create "AOI Sequence Charts" with personalized title 
+```
+AOIanalyseR::createAOISequenceChart(
+  data,
+  ggplot_object = ggplot2::labs(title = "Title", x = "x-axis", y = "y-axis")
+)
+```
+All charts are interactive. Klick on an AOI beneath the chart to select the AOI you want to look at or use the plotly functions in the top right corner. 
 * Create an alternative "AOI Sequence Chart" (only one test subject per chart)
-`AOIanalyseR::createAOISplitChart(data = AOIanalyseR::importedData, name = "subject1")`
+```
+# Using importedData from Sample.tsv
+AOIanalyseR::createAOISplitChart(data = AOIanalyseR::importedData, name = "subject1")
+```
 * View statistics
-`createStats(data)`
+```
+stats <- AOIanalyseR::createStats(data)
+```
+* Create  Bar Chart with statistics for all AOI
+```
+AOIanalyseR::createStatsChart(
+  stats,
+  ggplot_object = ggplot2::labs(title = "Title", x = "x-axis", y = "y-axis")
+)
+```
+* Create Bar Chart for one AOI
+```
+AOIanalyseR::createStatsChart(
+  stats,
+  aoi = "YOUR_AOI", 
+  ggplot_object = ggplot2::labs(title = "Title", x = "x-axis", y = "y-axis")
+)
+```
